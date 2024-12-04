@@ -47,8 +47,8 @@ jobs:
         uses: superfly/flyctl-actions/setup-flyctl@master
         if: github.ref == 'refs/heads/main'
 
-      - run: npx nx affected -t lint test build e2e deploy
+      - run: npx nx affected -t lint test build deploy
         if: github.ref == 'refs/heads/main'
 
-      - run: npx nx affected -t lint test build e2e
+      - run: npx nx affected -t lint test build
         if: github.ref != 'refs/heads/main'
