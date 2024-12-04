@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for ng-be-miro-24-twilight-paper-728 on 2024-12-04T17:37:27+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'ng-be-miro-24'
+primary_region = 'lax'
+
+[build]
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
